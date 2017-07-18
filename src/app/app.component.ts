@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { StartUpPage } from '../pages/start-up/start-up';
 import { UserStatusProvider } from '../providers/user-status/user-status';
 import {LoginProvider} from "../providers/login/login";
+import {EditProfilePage} from "../pages/edit-profile/edit-profile";
 
 
 @Component({
@@ -31,6 +32,7 @@ export class MyApp {
 
     this.pages = [
       { title: 'Home', component: HomePage },
+      { title: 'Edit Profile', component: EditProfilePage },
     ];
 
     platform.ready().then(() => {

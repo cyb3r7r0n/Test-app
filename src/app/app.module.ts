@@ -14,11 +14,13 @@ import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { StartUpPage } from '../pages/start-up/start-up';
+import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 
 import { UserStatusProvider } from '../providers/user-status/user-status';
 import { LoginProvider } from '../providers/login/login';
 import { UserProvider } from '../providers/user/user';
 import { MainScreenNavProvider } from '../providers/main-screen-nav/main-screen-nav';
+import { ExpandableComponent } from '../components/expandable/expandable';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { MainScreenNavProvider } from '../providers/main-screen-nav/main-screen-
     MyApp,
     HomePage,
     StartUpPage,
+    EditProfilePage,
+    ExpandableComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +44,7 @@ import { MainScreenNavProvider } from '../providers/main-screen-nav/main-screen-
     MyApp,
     HomePage,
     StartUpPage,
+    EditProfilePage,
   ],
   providers: [
     StatusBar,

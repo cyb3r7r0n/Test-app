@@ -1,0 +1,46 @@
+<!--
+  Generated template for the EditProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item (click) = "expandItem('username')">
+      <h2>Change Username</h2>
+      <h3>{{userStatus.currentUser.username}}</h3>
+      <expandable [expandHeight]="itemExpandHeight" [expand] = "expanded.username"> Hello </expandable>
+    </ion-item>
+
+    <ion-item (click) = "expandItem('email')">
+      <h2>Change Email</h2>
+      <h3>{{userStatus.currentUser.email}}</h3>
+      <expandable [expandHeight]="itemExpandHeight" [expand] = "expanded.email"> Hello </expandable>
+    </ion-item>
+
+    <ion-item (click) = "expandItem('phone')">
+      <h2>Change Number</h2>
+      <h3>{{userStatus.currentUser.phone}}</h3>
+      <expandable [expandHeight]="itemExpandHeight" [expand] = "expanded.phone"> Hello </expandable>
+    </ion-item>
+
+    <ion-item (click) = "expandItem('password')">
+      <h2>Change Password</h2>
+      <expandable [expandHeight]="itemExpandHeight" [expand] = "expanded.password"> Hello </expandable>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
