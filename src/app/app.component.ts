@@ -19,7 +19,7 @@ export class MyApp {
   rootPage:any = StartUpPage;
   loader : any;
 
-  // pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any}>;
 
   constructor(platform: Platform,
               statusBar: StatusBar,
@@ -27,9 +27,9 @@ export class MyApp {
               public userStatus: UserStatusProvider,
               public loadingCtrl: LoadingController,) {
 
-    // this.pages = [
-    //   { title: 'Home', component: HomePage },
-    // ];
+    this.pages = [
+      { title: 'Home', component: HomePage },
+    ];
 
     platform.ready().then(() => {
       statusBar.overlaysWebView(true);
@@ -58,8 +58,8 @@ export class MyApp {
     this.loader.present();
   }
 
-  // openPage(page) {
-  //   this.nav.setRoot(page.component);
-  // }
+  openPage(page) {
+    this.nav.setRoot(page.component);
+  }
 }
 

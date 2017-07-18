@@ -14,11 +14,11 @@ import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { StartUpPage } from '../pages/start-up/start-up';
-import { PopoverPage } from '../pages/popover/popover';
 
 import { UserStatusProvider } from '../providers/user-status/user-status';
 import { LoginProvider } from '../providers/login/login';
 import { UserProvider } from '../providers/user/user';
+import { MainScreenNavProvider } from '../providers/main-screen-nav/main-screen-nav';
 
 
 @NgModule({
@@ -26,7 +26,6 @@ import { UserProvider } from '../providers/user/user';
     MyApp,
     HomePage,
     StartUpPage,
-    PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +40,6 @@ import { UserProvider } from '../providers/user/user';
     MyApp,
     HomePage,
     StartUpPage,
-    PopoverPage
   ],
   providers: [
     StatusBar,
@@ -54,6 +52,7 @@ import { UserProvider } from '../providers/user/user';
     Transfer,
     Camera,
     FilePath,
+    MainScreenNavProvider,
   ]
 })
 export class AppModule {}
