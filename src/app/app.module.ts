@@ -52,7 +52,7 @@ import { MainScreenNavProvider } from '../providers/main-screen-nav/main-screen-
     Transfer,
     Camera,
     FilePath,
-    MainScreenNavProvider,
+    MainScreenNavProvider
   ]
 })
 export class AppModule {}

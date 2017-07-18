@@ -8,6 +8,7 @@ import { PopoverController } from 'ionic-angular';
 import { HomePage } from '../pages/home/home';
 import { StartUpPage } from '../pages/start-up/start-up';
 import { UserStatusProvider } from '../providers/user-status/user-status';
+import {LoginProvider} from "../providers/login/login";
 
 
 @Component({
@@ -25,7 +26,8 @@ export class MyApp {
               statusBar: StatusBar,
               splashScreen: SplashScreen,
               public userStatus: UserStatusProvider,
-              public loadingCtrl: LoadingController,) {
+              public loadingCtrl: LoadingController,
+              public login: LoginProvider) {
 
     this.pages = [
       { title: 'Home', component: HomePage },
@@ -60,6 +62,11 @@ export class MyApp {
 
   openPage(page) {
     this.nav.setRoot(page.component);
+  }
+
+  logout(){
+    this.nav.setRoot(StartUpPage);
+    this.login.logout();
   }
 }
 
