@@ -1,0 +1,114 @@
+<ion-content>
+
+  <div class="background"  #background>
+    <img src="assets/background%202.jpg">
+  </div>
+
+  <div class="header" #heading>
+      Lorem Ipsum
+  </div>
+<!--Heading Ends Here-->
+  <div class="wrapper-login" #login>
+
+    <button ion-button (click)="loadLogin()">
+      Login
+    </button>
+  </div>
+
+  <!--Login Buttin ends here-->
+
+  <div class="loginForm" #loginForm style=" right: 100%">
+
+    <!---->
+    <div class="flip-container" [class.flipped] = "flipped">
+
+      <div class="flipper">
+
+        <div class="front" #front>
+          <ion-list inset class="list">
+
+            <form #LOGINFORM = 'ngForm' (ngSubmit) = "onSubmit(LOGINFORM.value)">
+
+              <ion-item class="form-group">
+                <ion-label class="input_field">Username</ion-label>
+                <ion-input type="text" [(ngModel)]="LOGIN.username" name="username"></ion-input>
+              </ion-item>
+
+              <ion-item class="form-group">
+                <ion-label class="input_field">Password</ion-label>
+                <ion-input type="password" [(ngModel)]="LOGIN.password" name="password"></ion-input>
+              </ion-item>
+
+              <ion-item class="form-group">
+                <ion-label style="color: white; font-size: 1em;">Remember Me</ion-label>
+                <ion-checkbox color="primary" [checked]="LOGIN.check" name="check" [(ngModel)]="LOGIN.check"></ion-checkbox>
+              </ion-item>
+
+              <ion-grid>
+                <ion-row style="margin: 1em; position: relative; bottom: 0px">
+                  <ion-col>
+                    <button ion-button style="width: 90%; margin: 1em;" type="submit">Login</button>
+                  </ion-col>
+                  <ion-col>
+                    <button ion-button style="width: 90%; margin: 1em;" type="button" (click)="flip()">Sign Up</button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+            </form>
+          </ion-list>
+        </div>
+
+        <div class="back" #back style="display: none">
+          <ion-list inset class="list">
+
+            <form #SIGNUPFORM = 'ngForm' (ngSubmit) = "onSubmit(SIGNUPFORM.value)">
+
+
+              <ion-item class="form-group">
+                <ion-label class="input_field">Username</ion-label>
+                <ion-input type="text" [(ngModel)]="SIGNUP.username" name="username"></ion-input>
+              </ion-item>
+
+              <ion-item class="form-group">
+                <ion-label class="input_field">Email</ion-label>
+                <ion-input type="email" [(ngModel)]="SIGNUP.email" name="email"></ion-input>
+              </ion-item>
+
+              <ion-item class="form-group">
+                <ion-label class="input_field">Password</ion-label>
+                <ion-input type="password" [(ngModel)]="SIGNUP.password" name="password"></ion-input>
+              </ion-item>
+
+              <ion-item class="form-group">
+                <ion-label class="input_field">Phone Number</ion-label>
+                <ion-input type="number" [(ngModel)]="SIGNUP.number" name="number"></ion-input>
+              </ion-item>
+
+              <ion-item class="form-group">
+                <ion-label style="color: white; font-size: 1em;">Remember Me</ion-label>
+                <ion-checkbox color="primary" [checked]="SIGNUP.check" name="check" [(ngModel)]="SIGNUP.check"></ion-checkbox>
+              </ion-item>
+
+              <ion-grid>
+                <ion-row style="margin: 1em; position: relative; bottom: 0px">
+                  <ion-col>
+                    <button ion-button style="width: 90%; margin: 1em;" type="submit">Sign Up</button>
+                  </ion-col>
+                  <ion-col>
+                    <button ion-button style="width: 90%; margin: 1em;" type="button" (click)="flip()">Login</button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+
+            </form>
+          </ion-list>
+        </div>
+      </div>
+    </div>
+    <!---->
+
+  </div>
+
+
+</ion-content>
