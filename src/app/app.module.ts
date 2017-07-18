@@ -20,7 +20,6 @@ import { UserStatusProvider } from '../providers/user-status/user-status';
 import { LoginProvider } from '../providers/login/login';
 import { UserProvider } from '../providers/user/user';
 import { MainScreenNavProvider } from '../providers/main-screen-nav/main-screen-nav';
-import { ExpandableComponent } from '../components/expandable/expandable';
 
 
 @NgModule({
@@ -29,7 +28,6 @@ import { ExpandableComponent } from '../components/expandable/expandable';
     HomePage,
     StartUpPage,
     EditProfilePage,
-    ExpandableComponent,
   ],
   imports: [
     BrowserModule,

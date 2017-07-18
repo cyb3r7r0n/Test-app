@@ -5,7 +5,6 @@ import { User } from '../user/user.model';
 import {UserStatusProvider} from '../user-status/user-status'
 import { UserProvider } from '../user/user';
 import { ToastController } from 'ionic-angular';
-import { StartUpPage } from '../../pages/start-up/start-up';
 
 /*
   Generated class for the LoginProvider provider.
@@ -62,5 +61,45 @@ export class LoginProvider {
       this.userStatus.updateUser(val);
     });
   }
+
+  changeUsername(currentusername: string, updatedusername: string){
+    this.storage.get(currentusername).then((user) =>{
+      user.username = updatedusername;
+      this.storage.set(updatedusername, user);
+      this.storage.remove(currentusername).then(() => console.log("user", currentusername, 'removed'));
+      console.log('username changed to', updatedusername);
+      this.userStatus.setCurrentUser(user);
+    });
+  }
+
+
+  changePassword(currentusername: string, updatedpassword: string){
+    this.storage.get(currentusername).then((user) =>{
+      user.password = updatedpassword;
+      this.storage.set(currentusername, user);
+      console.log('password changed to', updatedpassword);
+      this.userStatus.setCurrentUser(user);
+    });
+  }
+
+  changeEmail(currentusername: string, updatedEmail: string) {
+    this.storage.get(currentusername).then((user) => {
+      user.email = updatedEmail;
+      this.storage.set(currentusername, user);
+      console.log('email changed to', updatedEmail);
+      this.userStatus.setCurrentUser(user);
+    });
+  }
+
+
+  changePhone(currentusername: string, updatedPhone: string){
+    this.storage.get(currentusername).then((user) =>{
+      user.phone = updatedPhone;
+      this.storage.set(currentusername, user);
+      console.log('phone changed to', updatedPhone);
+      this.userStatus.setCurrentUser(user);
+    });
+  }
+
 
 }

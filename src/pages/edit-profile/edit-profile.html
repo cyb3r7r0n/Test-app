@@ -18,27 +18,63 @@
 <ion-content padding>
 
   <ion-list>
-    <ion-item (click) = "expandItem('username')">
+    <ion-item>
       <h2>Change Username</h2>
       <h3>{{userStatus.currentUser.username}}</h3>
-      <expandable [expandHeight]="itemExpandHeight" [expand] = "expanded.username"> Hello </expandable>
+      <ion-icon name="arrow-dropdown" (click) = "expandItem('username')" style="border: solid; width: 100%"></ion-icon>
+
+      <div class="expand-wraper" [class.expanded] = "expanded.username">
+          <!--<ion-label floating>Username</ion-label>-->
+          <!--<ion-input type="text" #username></ion-input>-->
+        <div style="position: relative; top: 30%">
+          <input type="text" placeholder="Username" #username style="height: 3em; padding-left: 10px">
+          <button ion-button (click)="changeUsername(username.value)">Save Changes</button>
+        </div>
+      </div>
     </ion-item>
 
-    <ion-item (click) = "expandItem('email')">
+    <ion-item>
       <h2>Change Email</h2>
       <h3>{{userStatus.currentUser.email}}</h3>
-      <expandable [expandHeight]="itemExpandHeight" [expand] = "expanded.email"> Hello </expandable>
+      <ion-icon name="arrow-dropdown" (click) = "expandItem('email')" style="border: solid; width: 100%"></ion-icon>
+
+      <div class="expand-wraper" [class.expanded] = "expanded.email">
+        <!--<ion-label floating>Username</ion-label>-->
+        <!--<ion-input type="text" #username></ion-input>-->
+        <div style="position: relative; top: 30%">
+          <input type="email" placeholder="Email" #email style="height: 3em; padding-left: 10px">
+          <button ion-button (click)="changeEmail(email.value)">Save Changes</button>
+        </div>
+      </div>
     </ion-item>
 
-    <ion-item (click) = "expandItem('phone')">
+    <ion-item>
       <h2>Change Number</h2>
       <h3>{{userStatus.currentUser.phone}}</h3>
-      <expandable [expandHeight]="itemExpandHeight" [expand] = "expanded.phone"> Hello </expandable>
+      <ion-icon name="arrow-dropdown" (click) = "expandItem('phone')" style="border: solid; width: 100%"></ion-icon>
+
+      <div class="expand-wraper" [class.expanded] = "expanded.phone">
+        <!--<ion-label floating>Username</ion-label>-->
+        <!--<ion-input type="text" #username></ion-input>-->
+        <div style="position: relative; top: 30%">
+          <input type="number" placeholder="Phone Number" #phone style="height: 3em; padding-left: 10px">
+          <button ion-button (click)="changePhone(phone.value)">Save Changes</button>
+        </div>
+      </div>
     </ion-item>
 
-    <ion-item (click) = "expandItem('password')">
+    <ion-item>
       <h2>Change Password</h2>
-      <expandable [expandHeight]="itemExpandHeight" [expand] = "expanded.password"> Hello </expandable>
+      <ion-icon name="arrow-dropdown" (click) = "expandItem('password')" style="border: solid; width: 100%"></ion-icon>
+
+      <div class="expand-wraper" [class.expanded] = "expanded.password">
+        <!--<ion-label floating>Username</ion-label>-->
+        <!--<ion-input type="text" #username></ion-input>-->
+        <div style="position: relative; top: 30%">
+          <input type="password" placeholder="Password" #password style="height: 3em; padding-left: 10px">
+          <button ion-button (click)="changePassword(password.value)">Save Changes</button>
+        </div>
+      </div>
     </ion-item>
 
   </ion-list>
