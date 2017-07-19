@@ -3,9 +3,13 @@ page-edit-profile {
     .expand-wraper{
       height: 0;
       transition: 0.2s linear;
+
+      //.input{
+      //  height: 100%;
+      //}
     }
 
     .expanded{
-      height: 200px !important;
+      height: 100px !important;
     }
 }

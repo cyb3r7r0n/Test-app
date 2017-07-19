@@ -24,10 +24,8 @@
       <ion-icon name="arrow-dropdown" (click) = "expandItem('username')" style="border: solid; width: 100%"></ion-icon>
 
       <div class="expand-wraper" [class.expanded] = "expanded.username">
-          <!--<ion-label floating>Username</ion-label>-->
-          <!--<ion-input type="text" #username></ion-input>-->
         <div style="position: relative; top: 30%">
-          <input type="text" placeholder="Username" #username style="height: 3em; padding-left: 10px">
+          <input type="text" placeholder="Username" #username class="input" style="height: 3em; padding-left: 10px">
           <button ion-button (click)="changeUsername(username.value)">Save Changes</button>
         </div>
       </div>
@@ -72,7 +70,8 @@
         <!--<ion-input type="text" #username></ion-input>-->
         <div style="position: relative; top: 30%">
           <input type="password" placeholder="Password" #password style="height: 3em; padding-left: 10px">
-          <button ion-button (click)="changePassword(password.value)">Save Changes</button>
+          <input type="password" placeholder="Confirm Password" #confirmpassword style="height: 3em; padding-left: 10px">
+          <button ion-button (click)="changePassword(password.value, confirmpassword.value)">Save Changes</button>
         </div>
       </div>
     </ion-item>

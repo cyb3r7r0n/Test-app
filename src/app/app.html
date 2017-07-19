@@ -7,13 +7,13 @@
   </ion-header>
 
   <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" color="dark">
+    <ion-list style="height:90%">
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" color="dark" style="height:10%">
         {{p.title}}
       </button>
     </ion-list>
 
-    <button menuClose ion-item (click)="logout()" color="dark" style="position: relative; bottom: 0px">
+    <button menuClose ion-item (click)="logout()" color="dark" style="position: relative; bottom: 0% ;height:10%">
       LogOut
     </button>
 

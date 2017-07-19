@@ -32,12 +32,8 @@ export class LoginProvider {
     return this.storage.get(username);
   }
 
-  getUser(username: string): User{
-    let user: User = null;
-    this.storage.get(username).then((val) =>
-      {user = val;}
-    )
-    return user;
+  getUser(username: string){
+    return this.storage.get(username);
   }
 
   createUser(user: User){
@@ -99,6 +95,73 @@ export class LoginProvider {
       console.log('phone changed to', updatedPhone);
       this.userStatus.setCurrentUser(user);
     });
+  }
+
+  validateUsername(updated: string){
+    if(this.userStatus.currentUser.username == updated){
+      return { status: false, message: 'Username not changed'};
+    }
+    else if(!updated || this.trim(updated)==""){
+      return { status: false, message: 'Kinly enter a valid username'};
+    }
+    else if(updated.length<=3 || updated.length>=25){
+      return {status: false, message:'Username can have a maximum length of 25 and mininmum length of 3'};
+    }
+    else{
+      return {status: true, message: ""};
+    }
+  }
+
+  validateEmail(updated: string){
+    if(this.userStatus.currentUser.email == updated){
+      return { status: false, message: 'Email not changed'};
+    }
+    else if(!updated || this.trim(updated)==""){
+      return { status: false, message: 'Kinly enter a valid email'};
+    }
+    else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(updated))  ){
+      return {status: false, message: 'Please enter a valid email address'};
+    }
+    else{
+      return {status: true, message: ''};
+    }
+  }
+
+  validatePhone(updated: number){
+    if(this.userStatus.currentUser.phone == updated){
+      return { status: false, message: 'Phone Number not changed'};
+    }
+    else if(!updated){
+      return { status: false, message: 'Enter a valid phone number'};
+    }
+    else if(updated/1000000000<1 || updated/1000000000>10){
+      return {status: false, message:'Enter a valid Phone Number'};
+    }
+    else{
+      return {status: true, message: ''};
+    }
+  }
+
+  validatePassword(updated: string, confirm: string){
+    if(this.userStatus.currentUser.username == updated){
+      return { status: false, message: 'Password not changed'};
+    }
+    else if(!updated || this.trim(updated)==""){
+      return { status: false, message: 'Kinly enter a valid password'};
+    }
+    else if(updated!==confirm){
+      return {status: false, message: 'Passwords do not match'}
+    }
+    else if(updated.length<=5 || updated.length>=25){
+      return {status: false, message:'Password can have a maximum length of 25 and mininmum length of 5'};
+    }
+    else{
+      return {status: true, message: ''};
+    }
+  }
+
+  trim(value: string){
+    return value.replace(/ /gi, "");
   }
 
 
