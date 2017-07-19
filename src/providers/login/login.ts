@@ -160,9 +160,7 @@ export class LoginProvider {
     }
   }
 
-  trim(value: string){
+  trim(value: string) {
     return value.replace(/ /gi, "");
   }
-
-
 }
